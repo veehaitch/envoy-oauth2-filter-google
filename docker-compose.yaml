@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  upstream:
+    build:
+      context: ./upstream
+      dockerfile: Dockerfile
+    container_name: upstream-service
+    restart: unless-stopped
+    networks:
+      - envoymesh
+  envoy:
+    build:
+      context: ./envoy
+      dockerfile: Dockerfile
+    container_name: envoy
+    restart: unless-stopped
+    ports:
+      - 40080:40080
+    networks:
+      - envoymesh
+networks:
+  envoymesh: {}
