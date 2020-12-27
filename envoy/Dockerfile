@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt update
 RUN apt install -y wget
 
-RUN wget -O /usr/local/bin/envoy-oauth2 "https://files.haupert.eu/public/envoy-pr14168-oauth_scope/envoy"
+RUN wget -O /usr/local/bin/envoy-oauth2 "https://files.veehait.ch/envoy-pr14168-oauth_scope/envoy"
 RUN chmod +x /usr/local/bin/envoy-oauth2
 
 RUN mkdir -p /etc/envoy
